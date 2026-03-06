@@ -1,0 +1,35 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# Local runtime/cache directories
+.run/
+.docker-tmp/
+
+# Java / Maven
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+jchatmind/.m2/
+jchatmind/output.txt
+
+# Node
+**/node_modules/
+**/dist/
+**/dist-ssr/
+
+# IDE
+**/.idea/
+**/.vscode/
+
+# Application runtime data
+**/data/documents/

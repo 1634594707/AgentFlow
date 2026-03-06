@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg18
+    container_name: agentflow-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jchatmind
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1209
+    ports:
+      - "5433:5432"
+    volumes:
+      - agentflow-postgres18-data:/var/lib/postgresql
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d jchatmind"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  agentflow-postgres18-data:
